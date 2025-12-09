@@ -31,36 +31,34 @@
     </footer>
     <script src="script.js"></script>
     <script type="module">
-  // Импорт Firebase модулей
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
-  import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-storage.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-storage.js";
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  const storage = getStorage(app);
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
 
-  // Пример: загрузка картинки
-  async function uploadImage(file, userId) {
-    const storageRef = ref(storage, `images/${userId}/${file.name}`);
-    await uploadBytes(storageRef, file);
-    const url = await getDownloadURL(storageRef);
+        async function uploadImage(file, userId) {
+            const storageRef = ref(storage, `images/${userId}/${file.name}`);
+            await uploadBytes(storageRef, file);
+            const url = await getDownloadURL(storageRef);
     
     // Сохраняем ссылку в Firestore
-    await addDoc(collection(db, "images"), { userId, url });
-    return url;
-  }
+            await addDoc(collection(db, "images"), { userId, url });
+            return url;
+        }
 
-  // Пример: получить все картинки пользователя
-  async function getUserImages(userId) {
-    const querySnapshot = await getDocs(collection(db, "images"));
-    return querySnapshot.docs
-      .map(doc => doc.data())
-      .filter(data => data.userId === userId)
-      .map(data => data.url);
+        async function getUserImages(userId) {
+            const querySnapshot = await getDocs(collection(db, "images"));
+        return querySnapshot.docs
+            .map(doc => doc.data())
+            .filter(data => data.userId === userId)
+            .map(data => data.url);
   }
 </script>
 
 </body>
 
 </html>
+
