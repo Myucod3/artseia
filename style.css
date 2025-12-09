@@ -1,0 +1,48 @@
+
+header {
+    display: inline;
+}
+
+footer {
+    border-top: 1px solid;
+}
+
+arts {
+    display: flex;
+    gap: 10px;
+    display: inline;
+}
+
+#upl {
+    position: static;
+}
+
+#arts {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    border: 10px black ;
+    border-style: initial;
+}
+
+#arts img {
+    border: 10px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    display: block;
+    
+}
+
+.like-btn {
+    margin-top: 8px;
+    background: none;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.like-btn:hover {
+    background-color: #ffe6e6;
+}

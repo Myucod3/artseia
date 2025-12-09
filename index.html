@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artseia</title>
+</head>
+<body>
+    <header>
+        <h1>Artseia</h1>
+        <div class="profile">
+            <img src="profile_icon.png" width="75px" height="75px">
+            <label id="name"><span id="username">user</span></label>
+        </div>
+        <div class="auth">
+            <button id="loginBtn" onclick="showPage('login')">Login</button>
+            <button id="logoutBtn" style="display: none;">Logout</button>
+        </div>
+        <nav>
+            <button onclick="showPage('home')">Home</button> |
+            <button onclick="showPage('gallery')">Gallery</button> |
+            <button onclick="showPage('profile')">Profile</button>
+        </nav>
+    </header>
+
+    <main id="content"></main>
+
+    <footer>
+        <p>Artseia</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
