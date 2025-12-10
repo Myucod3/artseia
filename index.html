@@ -30,57 +30,10 @@
         <p>Artseia</p>
     </footer>
     <script src="script.js"></script>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
-        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-storage.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAyMy_k_nEcS0d3yvkADSmV5nESXyh7iIk",
-            authDomain: "artseia.firebaseapp.com",
-            projectId: "artseia",
-            storageBucket: "artseia.firebasestorage.app",
-            messagingSenderId: "744755377300",
-            appId: "1:744755377300:web:a36b65d72e4a43df607081",
-            measurementId: "G-T0V8CJMJ6W"
-        };
-        
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const storage = getStorage(app);
-        const auth = getAuth(app);
-        
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
-        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-storage.js";
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const storage = getStorage(app);
-
-        async function uploadImage(file, userId) {
-            const storageRef = ref(storage, `images/${userId}/${file.name}`);
-            await uploadBytes(storageRef, file);
-            const url = await getDownloadURL(storageRef);
-    
-    // Сохраняем ссылку в Firestore
-            await addDoc(collection(db, "images"), { userId, url });
-            return url;
-        }
-
-        async function getUserImages(userId) {
-            const querySnapshot = await getDocs(collection(db, "images"));
-        return querySnapshot.docs
-            .map(doc => doc.data())
-            .filter(data => data.userId === userId)
-            .map(data => data.url);
-  }
-</script>
-
 </body>
 
 </html>
+
 
 
 
