@@ -37,13 +37,15 @@
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
 
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "your-project.firebaseapp.com",
-            projectId: "your-project-id",
-            storageBucket: "your-project.appspot.com",
-            messagingSenderId: "YOUR_MESSAGING_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyAyMy_k_nEcS0d3yvkADSmV5nESXyh7iIk",
+            authDomain: "artseia.firebaseapp.com",
+            projectId: "artseia",
+            storageBucket: "artseia.firebasestorage.app",
+            messagingSenderId: "744755377300",
+            appId: "1:744755377300:web:a36b65d72e4a43df607081",
+            measurementId: "G-T0V8CJMJ6W"
         };
+        
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const storage = getStorage(app);
@@ -79,6 +81,7 @@
 </body>
 
 </html>
+
 
 
 
