@@ -248,3 +248,7 @@ window.onload = function() {
         showPage('login');
     });
 };
+
+window.showPage = showPage;
+window.registerUser = registerUser;
+window.loginUser = loginUser;
