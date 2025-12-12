@@ -145,7 +145,6 @@ async function uploadArt(event) {
     }
 }
 
-// --- Загрузка арта из Firebase или localStorage ---
 async function loadArts() {
     const artContainer = document.getElementById('arts');
     artContainer.innerHTML = '';
@@ -252,3 +251,4 @@ window.onload = function() {
 window.showPage = showPage;
 window.registerUser = registerUser;
 window.loginUser = loginUser;
+window.uploadArt = uplaodArt
