@@ -249,6 +249,4 @@ window.onload = function() {
 };
 
 window.showPage = showPage;
-window.registerUser = registerUser;
-window.loginUser = loginUser;
 window.uploadArt = uplaodArt;
