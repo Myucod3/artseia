@@ -212,25 +212,6 @@ function saveArts() {
     localStorage.setItem('arts', JSON.stringify(arts));
 }
 
-function saveArts() {
-    const artDivs = document.querySelectorAll('#arts .artDiv');
-    const arts = [];
-
-    artDivs.forEach(div => {
-        const img = div.querySelector('img');
-        const likeBtn = div.querySelector('.like-btn')
-
-
-        arts.push({
-            src: img.src,
-            likes: likeBtn.textContent.replace('❤️ ', ''),
-            username: div.querySelector('p').textContent
-        });
-    });
-
-    localStorage.setItem('arts', JSON.stringify(arts));
-}
-
 function loadArts() {
     const saved = localStorage.getItem('arts');
     
@@ -337,5 +318,6 @@ window.onload = function () {
         showPage('login')
     });
 };
+
 
 
